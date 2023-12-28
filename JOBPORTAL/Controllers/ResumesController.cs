@@ -21,7 +21,7 @@ namespace JOBPORTAL.Controllers
 {
     public class ResumesController : Controller
     {
-        private JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities();
+        private Job_Portal_Entities db = new Job_Portal_Entities();
 
         // GET: Resumes1
         public ActionResult Index()
@@ -191,14 +191,14 @@ namespace JOBPORTAL.Controllers
                 res.CvFileText = filepath;
                 res.CvFileName = filename;
                 int a = Convert.ToInt32(Session["SeekerId"]);
-                var b = new JOB_PORTAL_3Entities();
+                var b = new Job_Portal_Entities();
                 b.Database.ExecuteSqlCommand("Update Jobseeker set ResumeFileName='" + filename + "' where JobSeekerId=" + a + "");
                 db.SaveChanges();
                 //return RedirectToAction("Index");
                 //resume.CvFileText = filepath;
 
             }
-            JOB_PORTAL_3Entities db1 = new JOB_PORTAL_3Entities();
+            Job_Portal_Entities db1 = new Job_Portal_Entities();
 
 
         

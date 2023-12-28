@@ -14,7 +14,7 @@ namespace JOBPORTAL.Controllers
 {
     public class JobsController : Controller
     {
-        private JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities();
+        private Job_Portal_Entities db = new Job_Portal_Entities();
 
         // GET: Jobs
         public async Task<ActionResult> Index()
@@ -179,7 +179,7 @@ namespace JOBPORTAL.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities())
+                using (Job_Portal_Entities db = new Job_Portal_Entities())
                 {
                     db.Jobs.Add(account);
                     db.SaveChanges();

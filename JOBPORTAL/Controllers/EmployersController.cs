@@ -22,7 +22,7 @@ namespace JOBPORTAL.Controllers
 {
     public class EmployersController : Controller
     {
-        private JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities();
+        private Job_Portal_Entities db = new Job_Portal_Entities();
 
         // GET: Employers
         public async Task<ActionResult> Index()
@@ -190,7 +190,7 @@ namespace JOBPORTAL.Controllers
         {
             var loginSuccess = false;
             
-            using (JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities())
+            using (Job_Portal_Entities db = new Job_Portal_Entities())
             {
                 
 
@@ -306,7 +306,7 @@ namespace JOBPORTAL.Controllers
                 string filepath = Path.Combine(Server.MapPath("~/EMPLOYERPROFILEPICTURE"), filename);
                 file.SaveAs(filepath);
                 int a = Convert.ToInt32(Session["EmployerId"]);
-                var b = new JOB_PORTAL_3Entities();
+                var b = new Job_Portal_Entities();
                 b.Database.ExecuteSqlCommand("Update Employer set ProfilePictureName='" + filename + "' where EmployerId=" + a + "");
                 db.SaveChanges();
                 //return RedirectToAction("Index");

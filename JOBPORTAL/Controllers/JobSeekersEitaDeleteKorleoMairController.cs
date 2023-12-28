@@ -20,7 +20,7 @@ namespace JOBPORTAL.Controllers
 {
     public class JobSeekersEitaDeleteKorleoMairController : Controller
     {
-        private JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities();
+        private Job_Portal_Entities db = new Job_Portal_Entities();
 
         // GET: JobSeekersEitaDeleteKorleoMair
         public ActionResult Index()

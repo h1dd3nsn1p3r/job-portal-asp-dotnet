@@ -13,10 +13,10 @@ namespace JOBPORTAL.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class JOB_PORTAL_3Entities : DbContext
+    public partial class Job_Portal_Entities : DbContext
     {
-        public JOB_PORTAL_3Entities()
-            : base("name=JOB_PORTAL_3Entities")
+        public Job_Portal_Entities()
+            : base("name=Job_Portal_Entities")
         {
         }
     

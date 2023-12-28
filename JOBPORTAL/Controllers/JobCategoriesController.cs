@@ -13,7 +13,7 @@ namespace JOBPORTAL.Controllers
 {
     public class JobCategoriesController : Controller
     {
-        private JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities();
+        private Job_Portal_Entities db = new Job_Portal_Entities();
 
         // GET: JobCategories
         public async Task<ActionResult> Index()

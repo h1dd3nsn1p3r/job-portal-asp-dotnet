@@ -556,7 +556,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="JOB_PORTAL_3Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Job_Portal_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employers" EntityType="Self.Employer" />
           <EntitySet Name="EmployerSelectsSeekers" EntityType="Self.EmployerSelectsSeeker" />
           <EntitySet Name="Jobs" EntityType="Self.Job" />
@@ -626,7 +626,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="JOB_PORTAL_3Entities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Job_Portal_Entities">
           <EntitySetMapping Name="Employers">
             <EntityTypeMapping TypeName="Model.Employer">
               <MappingFragment StoreEntitySet="Employer">

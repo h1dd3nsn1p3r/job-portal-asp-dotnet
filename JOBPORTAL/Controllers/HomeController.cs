@@ -30,7 +30,7 @@ namespace JOBPORTAL.Controllers
 
         public ActionResult ContactSubmit(string a,string b,string c,string d)
         {
-            JOB_PORTAL_3Entities DD = new JOB_PORTAL_3Entities();
+            Job_Portal_Entities DD = new Job_Portal_Entities();
             ContactU cc = new ContactU();
             cc.FullName = a;
             cc.Email = b;

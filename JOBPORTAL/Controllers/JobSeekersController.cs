@@ -21,7 +21,7 @@ namespace JOBPORTAL.Controllers
 {
     public class JobSeekersController : Controller
     {
-        private JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities();
+        private Job_Portal_Entities db = new Job_Portal_Entities();
 
         // GET: JobSeekers
         public ActionResult Index()
@@ -205,7 +205,7 @@ namespace JOBPORTAL.Controllers
         public ActionResult SeekerLogin(JobSeeker user)
         {
             var loginSuccess = false;
-            using (JOB_PORTAL_3Entities db = new JOB_PORTAL_3Entities())
+            using (Job_Portal_Entities db = new Job_Portal_Entities())
             {
                 try
                 {
@@ -311,7 +311,7 @@ namespace JOBPORTAL.Controllers
                 string filepath = Path.Combine(Server.MapPath("~/PROFILEPICTURE"), filename);
                 file.SaveAs(filepath);
                 int a = Convert.ToInt32(Session["SeekerId"]);
-                var b = new JOB_PORTAL_3Entities();
+                var b = new Job_Portal_Entities();
                 b.Database.ExecuteSqlCommand("Update Jobseeker set ProfilePictureName='" + filename + "' where JobSeekerId=" + a + "");
                 db.SaveChanges();
                 //return RedirectToAction("Index");
