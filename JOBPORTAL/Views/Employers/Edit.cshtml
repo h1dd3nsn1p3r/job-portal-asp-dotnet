@@ -1,0 +1,125 @@
+﻿@model JOBPORTAL.Models.Employer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="w-full max-w-md mx-auto p-6 mt-10 mb-20">
+    <div class="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-4 sm:p-7">
+            <div class="text-center mb-10">
+                <div>
+                    <span class="mb-2 text-sm font-semibold text-blue-600 mb-5">
+                        Editing
+                    </span>
+                    <h2 class="text-3xl font-bold uppercase">
+                        Employer
+                    </h2>
+                </div>
+            </div>
+            <div class="mt-5">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <!-- Form -->
+                    <form>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.EmployerId)
+                        <div class="grid gap-y-4">
+                            <!-- Form Group -->
+                            <div>
+                                @Html.LabelFor(model => model.EmployerUsername, "Username", htmlAttributes: new { @class = "block text-sm mb-2 dark:text-white" })
+                                <div class="relative">
+                                    @Html.EditorFor(model => model.EmployerUsername, new { htmlAttributes = new { @class = "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600", placeholder = "creamcodetech" } })
+                                    <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                        <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div>
+                                @Html.LabelFor(model => model.EmployerEmail, "Email address", htmlAttributes: new { @class = "block text-sm mb-2 dark:text-white" })
+                                <div class="relative">
+                                    @Html.EditorFor(model => model.EmployerEmail, new { htmlAttributes = new { @class = "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600", placeholder = "creamcodetech@example.com" } })
+                                    <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                        <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div>
+                                @Html.LabelFor(model => model.EmployerName, "Full name", htmlAttributes: new { @class = "block text-sm mb-2 dark:text-white" })
+                                <div class="relative">
+                                    @Html.EditorFor(model => model.EmployerName, new { htmlAttributes = new { @class = "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600", placeholder = "Cream Code Tech Pvt Ltd" } })
+                                    <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                        <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div>
+                                @Html.LabelFor(model => model.EmployerContactNo, "Phone number", htmlAttributes: new { @class = "block text-sm mb-2 dark:text-white" })
+                                <div class="relative">
+                                    @Html.EditorFor(model => model.EmployerContactNo, new { htmlAttributes = new { @class = "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600", placeholder = "015678904" } })
+                                    <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                        <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div>
+                                @Html.LabelFor(model => model.EmployerPassword, "Password", htmlAttributes: new { @class = "block text-sm mb-2 dark:text-white" })
+                                <div class="relative">
+                                    @Html.EditorFor(model => model.EmployerPassword, new { htmlAttributes = new { @class = "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600", placeholder = "" } })
+                                    <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                        <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="hidden text-xs text-red-600 mt-2" id="password-error">8+ characters required</p>
+                            </div>
+                            <!-- End Form Group -->
+                            <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M11 2H9v3h2z" />
+                                    <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                                </svg>
+                                Update
+                            </button>
+                        </div>
+                    </form>
+                    <!-- End Form -->
+                }
+            </div>
+        </div>
+    </div>
+    <div class="mt-10">
+        <a href="/Employers/Index" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z" />
+            </svg>
+            Back to employers list
+        </a>
+    </div>
+</main>

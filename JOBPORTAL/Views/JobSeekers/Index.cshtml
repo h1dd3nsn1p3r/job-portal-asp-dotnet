@@ -1,0 +1,65 @@
+﻿@model IEnumerable<JOBPORTAL.Models.JobSeeker>
+
+@{
+    ViewBag.Title = "Job Seekers";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="relative max-w-7xl w-full mx-auto">
+    <div class="flex flex-col mt-10 mb-10">
+        <div class="flex align-center justify-between mb-10">
+            <div>
+                <span class="mb-2 text-sm font-normal text-blue-600 mb-5">
+                    Listing job seekers
+                </span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight uppercase">
+                    All Candidates
+                </h2>
+            </div>
+            <div>
+                <a href="/JobSeekers/Create/" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                    + Add Candidate
+                </a>
+            </div>
+        </div>
+        <div class="relative flex overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead class="bg-gray-50 dark:bg-gray-700">
+                    <tr>
+                        <th scope="col" class="px-6 py-6 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
+                        <th scope="col" class="px-6 py-6 text-start text-xs font-medium text-gray-500 uppercase">Phone</th>
+                        <th scope="col" class="px-6 py-6 text-start text-xs font-medium text-gray-500 uppercase">Email</th>
+                        <th scope="col" class="px-6 py-6 text-start text-xs font-medium text-gray-500 uppercase">Employer</th>
+                        <th scope="col" class="px-6 py-6 text-start text-xs font-medium text-gray-500 uppercase">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-normal text-gray-800 dark:text-gray-200">
+                                @Html.DisplayFor(modelItem => item.JobSeekerName)
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-normal text-gray-800 dark:text-gray-200">
+                                @Html.DisplayFor(modelItem => item.JobSeekerContactNo)
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-normal text-gray-800 dark:text-gray-200">
+                                @Html.DisplayFor(modelItem => item.JobSeekerEmail)
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-normal text-gray-800 dark:text-gray-200">
+                                @Html.DisplayFor(modelItem => item.Employer.EmployerName)
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-start text-sm font-normal">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.JobSeekerId }, new { @class = "py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" }) &nbsp;
+                                @Html.ActionLink("Delete", "Delete", new { id = item.JobSeekerId }, new { @class = "py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent bg-red-500 text-white hover:bg-red-600 disabled:opacity-50 disabled:pointer-events-none" }) &nbsp;
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
