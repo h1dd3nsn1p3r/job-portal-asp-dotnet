@@ -249,7 +249,7 @@ namespace JOBPORTAL.Controllers
            // return View();
         }
 
-        public ActionResult Profile1()
+        public ActionResult Profile()
         {
             return View();
         }

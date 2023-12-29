@@ -262,17 +262,14 @@ namespace JOBPORTAL.Controllers
 
         public ActionResult Profile()
         {
-            return View();
-        }
-
-        public ActionResult Welcome()
-        {
-            return View();
-        }
-
-        public ActionResult AfterLogin()
-        {
-            return View();
+            if (Session["SeekerId"] != null) { 
+                int id = Convert.ToInt32(Session["SeekerId"]);
+                var query = db.JobSeekers.SqlQuery("Select * From JobSeeker where JobSeekerId=" + id + "").ToList();
+                return View(query);
+            } else
+            {
+                return RedirectToAction("SeekerLogin", "JobSeekers");
+            }
         }
 
         public ActionResult Search(String SearchByTitle, string SearchByLocation)
@@ -286,9 +283,16 @@ namespace JOBPORTAL.Controllers
 
         public ActionResult ProfileInformation()
         {
-            int a = Convert.ToInt32(Session["SeekerId"]);
-            var query2 = db.JobSeekers.SqlQuery("Select * From JobSeeker where JobSeekerId=" + a + "").ToList();
-            return View(query2);
+            if (Session["SeekerId"] != null)
+            {
+                int id = Convert.ToInt32(Session["SeekerId"]);
+                var query = db.JobSeekers.SqlQuery("Select * From JobSeeker where JobSeekerId=" + id + "").ToList();
+                return View(query);
+            }
+            else
+            {
+                return RedirectToAction("SeekerLogin", "JobSeekers");
+            }
         }
 
         public ActionResult ViewForPictureUpload()

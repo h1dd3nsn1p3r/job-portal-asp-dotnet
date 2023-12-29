@@ -2432,9 +2432,7 @@
     <Content Include="Views\JobSeekersEitaDeleteKorleoMair\Registration.cshtml" />
     <Content Include="Views\JobSeekers\Profile.cshtml" />
     <Content Include="Views\Employers\Profile.cshtml" />
-    <Content Include="Views\JobSeekers\Welcome.cshtml" />
     <Content Include="Views\Employers\AfterLogin.cshtml" />
-    <Content Include="Views\JobSeekers\AfterLogin.cshtml" />
     <Content Include="Views\Employers\ShowInsertedJobs.cshtml" />
     <Content Include="Views\Employers\ProfileInfo.cshtml" />
     <Content Include="Views\JobSeekers\ProfileInformation.cshtml" />
@@ -3197,15 +3195,14 @@
     <Content Include="node_modules\yaml\package.json" />
     <Content Include="node_modules\yaml\README.md" />
     <None Include="packages.config" />
+    <Content Include="Uploads\cv\.gitkeep" />
+    <Content Include="Uploads\profile\.gitkeep" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CVFILE\" />
-    <Folder Include="EMPLOYERPROFILEPICTURE\" />
-    <Folder Include="PROFILEPICTURE\" />
     <Folder Include="Views\Resume\" />
   </ItemGroup>
   <ItemGroup>
